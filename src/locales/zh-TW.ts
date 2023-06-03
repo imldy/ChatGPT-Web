@@ -13,6 +13,7 @@ export default {
     export: '匯出',
     exportSuccess: '匯出成功',
     import: '匯入',
+    mergeImport: '合併匯入',
     importSuccess: '匯入成功',
     clear: '清除',
     clearSuccess: '清除成功',

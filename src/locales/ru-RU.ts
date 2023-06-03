@@ -13,6 +13,7 @@ export default {
     export: 'Экспортировать',
     exportSuccess: 'Экспорт выполнен успешно',
     import: 'Импортировать',
+    mergeImport: 'Объединить импорт',
     importSuccess: 'Импорт выполнен успешно',
     clear: 'Очистить',
     clearSuccess: 'Очищено успешно',

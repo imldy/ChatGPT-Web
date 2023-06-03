@@ -13,6 +13,7 @@ export default {
     export: '导出',
     exportSuccess: '导出成功',
     import: '导入',
+    mergeImport: '合并导入',
     importSuccess: '导入成功',
     clear: '清空',
     clearSuccess: '清空成功',

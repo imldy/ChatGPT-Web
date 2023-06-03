@@ -13,6 +13,7 @@ export default {
     export: '내보내기',
     exportSuccess: '내보내기 성공',
     import: '가져오기',
+    mergeImport: '병합 가져오기',
     importSuccess: '가져오기 성공',
     clear: '비우기',
     clearSuccess: '비우기 성공',

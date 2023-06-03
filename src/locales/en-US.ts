@@ -13,6 +13,7 @@ export default {
     export: 'Export',
     exportSuccess: 'Export Success',
     import: 'Import',
+    mergeImport: 'Merge Import',
     importSuccess: 'Import Success',
     clear: 'Clear',
     clearSuccess: 'Clear Success',

@@ -5,6 +5,8 @@ import { ChatGPTAPI, ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import { SocksProxyAgent } from 'socks-proxy-agent'
 import httpsProxyAgent from 'https-proxy-agent'
 import fetch from 'node-fetch'
+import KeyvRedis from '@keyv/redis'
+import Keyv from 'keyv'
 import { sendResponse } from '../utils'
 import { isNotEmptyString } from '../utils/is'
 import type { ApiModel, ChatContext, ChatGPTUnofficialProxyAPIOptions, ModelConfig } from '../types'
@@ -44,6 +46,12 @@ let api: ChatGPTAPI | ChatGPTUnofficialProxyAPI
       apiKey: process.env.OPENAI_API_KEY,
       completionParams: { model },
       debug: !disableDebug,
+    }
+    if (process.env.REDIS_ON === 'true') {
+      // see https://github.com/transitive-bullshit/chatgpt-api/blob/main/demos/demo-persistence.ts
+      const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379'
+      const store = new KeyvRedis(redisUrl)
+      options.messageStore = new Keyv({ store, namespace: 'chatgpt-web' })
     }
 
     // increase max token limit if use gpt-4
